@@ -1,28 +1,27 @@
 <?php include ('connect_db.php');
-//if (!isset($_POST['itemid'])) $_POST['itemid'] = "";
-//if (!isset($_POST['initemid'])) $_POST['initemid'] = "";
-//if (!isset($_POST['subtype'])) $_POST['subtype'] = "";
-//if (!isset($_POST['ryear'])) $_POST['ryear'] = "";
-///if (!isset($_POST['budgettype'])) $_POST['budgettype'] = "";
-//if (!isset($_POST['cost'])) $_POST['cost'] = "";
-//if (!isset($_POST['buyid'])) $_POST['buyid'] = "";
-//if (!isset($_POST['method'])) $_POST['method'] = "";
-//if (!isset($_POST['depname'])) $_POST['depname'] = "";
-//if (!isset($_POST['place'])) $_POST['place'] = "";
-//if (!isset($_POST['jobdetail'])) $_POST['jobdetail'] = "";
+if (!isset($_GET['itemid'])) $_GET['itemid'] = "";
+if (!isset($_GET['initemid'])) $_GET['initemid'] = "";
+if (!isset($_GET['subtype'])) $_GET['subtype'] = "";
+if (!isset($_GET['ryear'])) $_GET['ryear'] = "";
+if (!isset($_GET['budgettype'])) $_GET['budgettype'] = "";
+if (!isset($_GET['cost'])) $_GET['cost'] = "";
+if (!isset($_GET['buyid'])) $_GET['buyid'] = "";
+if (!isset($_GET['method'])) $_GET['method'] = "";
+if (!isset($_GET['depname'])) $_GET['depname'] = "";
+if (!isset($_GET['place'])) $_GET['place'] = "";
+if (!isset($_GET['jobdetail'])) $_GET['jobdetail'] = "";
         $itemid = $_GET['itemid'];
-        echo $itemid;
-        //$initemid = $_POST['initemid'];
-        //$subtype = $_POST['subtype'];
-        //$serialno = $_POST['serialno'];
-        //$ryear = $_POST['ryear'];
-        //$budgettype = $_POST['budgettype'];
-       // $cost = $_POST['cost'];
-        //$buyid = $_POST['buyid'];
-        //$method = $_POST['method'];
-        //$depname = $_POST['depname'];
-        //$place = $_POST['place'];
-        //$jobdetail = $_POST['jobdetail'];
+        $initemid = $_GET['initemid'];
+        $subtype = $_GET['subtype'];
+        $serialno = $_GET['serialno'];
+        $ryear = $_GET['ryear'];
+        $budgettype = $_GET['budgettype'];
+        $cost = $_GET['cost'];
+        $buyid = $_GET['buyid'];
+        $method = $_GET['method'];
+        $depname = $_GET['depname'];
+        $place = $_GET['place'];
+        $jobdetail = $_GET['jobdetail'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -132,47 +131,47 @@
                     </div>
                     <div class="col-md-6 form-group mt-2">
                         <label class="form-control-label">รหัสครุภัณฑ์ 3 มิติ</label><input type="text"
-                            class="form-control" name="initemid" placeholder="รหัสครุภัณฑ์ 3 มิติ" required>
+                            class="form-control" name="initemid" placeholder="รหัสครุภัณฑ์ 3 มิติ" value="<?php echo $initemid;?>" required>
                     </div>
                     <div class="mt-3">
                         <label class="form-control-label">ชื่อครุภัณฑ์</label><input type="text" class="form-control"
-                            name="subtype" placeholder="ชื่อครุภัณฑ์" required>
+                            name="subtype" placeholder="ชื่อครุภัณฑ์" value="<?php echo $subtype;?>" required>
                     </div>
                     <div class="mt-3">
                         <label class="form-control-label">S/N</label><input type="text" class="form-control"
-                            name="serialno" placeholder="S/N" required>
+                            name="serialno" placeholder="S/N" value="<?php echo $serialno;?>" required>
                     </div>
                     <div class="col-md-4 form-group mt-3">
                         <label class="form-control-label">ได้มาเมื่อ</label><input type="text" name="ryear"
-                            class="form-control" placeholder="ได้มาเมื่อ" required>
+                            class="form-control" placeholder="ได้มาเมื่อ" value="<?php echo $ryear;?>" required>
                     </div>
                     <div class="col-md-8 form-group mt-3">
                         <label class="form-control-label">ประเภทงบประมาณ</label><input type="text" class="form-control"
-                            name="budgettype" placeholder="ประเภทงบประมาณ" required>
+                            name="budgettype" placeholder="ประเภทงบประมาณ" value="<?php echo $budgettype;?>" required>
                     </div>
                     <div class="col-md-6 form-group mt-3">
                         <label class="form-control-label">ราคาต่อหน่วย</label><input type="text" name="cost"
-                            class="form-control" placeholder="ราคาต่อหน่วย" required>
+                            class="form-control" placeholder="ราคาต่อหน่วย" value="<?php echo $cost;?>" required>
                     </div>
                     <div class="col-md-6 form-group mt-3">
                         <label class="form-control-label">เลขที่ใบเบิก</label><input type="text" class="form-control"
-                            name="buyid" placeholder="เลขที่ใบเบิก" required>
+                            name="buyid" placeholder="เลขที่ใบเบิก" value="<?php echo $buyid;?>" required>
                     </div>
                     <div class="col-md-6 form-group mt-3">
                         <label class="form-control-label">วิธีการได้มา</label><input type="text" name="method"
-                            class="form-control" placeholder="วิธีการได้มา" required>
+                            class="form-control" placeholder="วิธีการได้มา" value="<?php echo $method;?>" required>
                     </div>
                     <div class="col-md-6 form-group mt-3">
                         <label class="form-control-label">ผู้ใช้งาน</label><input type="text" class="form-control"
-                            name="depname" placeholder="ผู้ใช้งาน" required>
+                            name="depname" placeholder="ผู้ใช้งาน" value="<?php echo $depname;?>" required>
                     </div>
                     <div class="col-md-6 form-group mt-3">
                         <label class="form-control-label">ใช้อยู่ที่</label><input type="text" name="place"
-                            class="form-control" placeholder="ใช้อยู่ที่" required>
+                            class="form-control" placeholder="ใช้อยู่ที่" value="<?php echo $place;?>" required>
                     </div>
                     <div class="col-md-6 form-group mt-3">
                         <label class="form-control-label">ทะเบียนครุภัณฑ์</label><input type="text" class="form-control"
-                            name="jobdetail" placeholder="ทะเบียนครุภัณฑ์" required>
+                            name="jobdetail" placeholder="ทะเบียนครุภัณฑ์" value="<?php echo $jobdetail;?>" required>
                     </div>
                     <div class="mt-2 text-center">
                         <button type="submit" class="btn btn-primary">บันทึกข้อมูล</button>

@@ -166,24 +166,37 @@ try {
                                 <input name="itemid" type="hidden" class="form-control"
                                     value="<?php echo $inventory['Item_id'];?>">
                             </td>
-                            <td><?php echo $inventory['Initem_id'];?>
+                            <td><?php echo $inventory['Initem_id'];?><input name="initemid" type="hidden" class="form-control"
+                                    value="<?php echo $inventory['Initem_id'];?>">
                             </td>
-                            <td><?php echo $inventory["Subtype"];?></td>
-                            <td><?php echo $inventory["Serial_no"];?></td>
-                            <td align="center"><?php echo $rDate;?></td>
-                            <td><?php echo $inventory["Budget_type"];?></td>
-                            <td align="right"><?php echo number_format($inventory["Cost"]);?></td>
-                            <td align="center"><?php echo $inventory["Buy_id"];?></td>
-                            <td align="center"><?php echo $inventory["Method"];?></td>
-                            <td><?php echo $inventory["Dep_name"];?></td>
+                            <td><?php echo $inventory["Subtype"];?><input name="subtype" type="hidden" class="form-control"
+                                    value="<?php echo $inventory['Subtype'];?>"></td>
+                            <td><?php echo $inventory["Serial_no"];?><input name="serialno" type="hidden" class="form-control"
+                                    value="<?php echo $inventory['Serial_no'];?>"></td>
+                            <td align="center"><?php echo $rDate;?><input name="ryear" type="hidden" class="form-control"
+                                    value="<?php echo $rDate;?>"></td>
+                            <td><?php echo $inventory["Budget_type"];?><input name="budgettype" type="hidden" class="form-control"
+                                    value="<?php echo $inventory['Budget_type'];?>"></td>
+                            <td align="right"><?php echo number_format($inventory["Cost"]);?><input name="cost" type="hidden" class="form-control"
+                                    value="<?php echo $inventory['Cost'];?>"></td>
+                            <td align="center"><?php echo $inventory["Buy_id"];?><input name="buyid" type="hidden" class="form-control"
+                                    value="<?php echo $inventory['Buy_id'];?>"></td>
+                            <td align="center"><?php echo $inventory["Method"];?><input name="method" type="hidden" class="form-control"
+                                    value="<?php echo $inventory['Method'];?>"></td>
+                            <td><?php echo $inventory["Dep_name"];?><input name="depname" type="hidden" class="form-control"
+                                    value="<?php echo $inventory['Dep_name'];?>"></td>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td><?php echo $inventory["Place"];?></td>
-                            <td><?php echo $inventory["Job_Detail"];?></td>
+                            <td><?php echo $inventory["Place"];?><input name="place" type="hidden" class="form-control"
+                                    value="<?php echo $inventory['Place'];?>"></td>
+                            <td><?php echo $inventory["Job_Detail"];?><input name="jobdetail" type="hidden" class="form-control"
+                                    value="<?php echo $inventory['Job_Detail'];?>"></td>
                             <td align="center"><a href="editinventory.php?itemid=<?php echo $inventory['Item_id']; ?>"
-                            <span class="glyphicon glyphicon-pencil">;</span></a><a href="deleteinventory.php?itemid=<?php echo $inventory['Item_id']; ?>"><span class="glyphicon glyphicon glyphicon-remove">;</span></a>
+                            <span class="glyphicon glyphicon-pencil">;</span></a>
+                            <a href="deleteinventory.php?itemid=<?php echo $inventory['Item_id']; ?>">
+                            <span class="glyphicon glyphicon-remove">;</span></a>
                             </td>
                         </tr>
 
