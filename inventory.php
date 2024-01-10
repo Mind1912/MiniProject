@@ -1,6 +1,4 @@
 <?php include ('connect_db.php');
-        $itemid = $_POST['itemid'];
-        $initemid = $_POST['initemid'];
 try {
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $stmt = $conn->prepare("SELECT * FROM `sci_inventory` LIMIT 0, 50");
@@ -18,7 +16,9 @@ try {
     <title>รายการครุภัณฑ์</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -155,19 +155,18 @@ try {
                 $conn = null;
                 $rDate = $inventory["R_date"]."/".$inventory["R_month"]."/".$inventory["R_year"];
                 ?>
-                    <form name="form2" action="editinventory.php" method="POST">
+                    <form name="form2">
                         <tr style="text-align: left;">
                             <td><?php echo $countInv;?></td>
                             <td scope="row">
                                 <!--
                     <p><button type="button" class="btn btn-primary">Update</button></p>
                 -->
-                                <?php echo $inventory['Item_id'];?><input name="itemid" type="hidden" class="form-control"
+                                <?php echo $inventory['Item_id'];?>
+                                <input name="itemid" type="hidden" class="form-control"
                                     value="<?php echo $inventory['Item_id'];?>">
                             </td>
                             <td><?php echo $inventory['Initem_id'];?>
-                                <input name="itemid" type="hidden" class="form-control"
-                                    value="<?php echo $inventory['Initem_id'];?>">
                             </td>
                             <td><?php echo $inventory["Subtype"];?></td>
                             <td><?php echo $inventory["Serial_no"];?></td>
@@ -183,12 +182,13 @@ try {
                             <td></td>
                             <td><?php echo $inventory["Place"];?></td>
                             <td><?php echo $inventory["Job_Detail"];?></td>
-                            <td><button type="edit" class="btn btn-primary btn-sm">แก้ไข</button>
+                            <td align="center"><a href="editinventory.php?itemid=<?php echo $inventory['Item_id']; ?>"
+                            <span class="glyphicon glyphicon-pencil">;</span></a><a href="deleteinventory.php?itemid=<?php echo $inventory['Item_id']; ?>"><span class="glyphicon glyphicon glyphicon-remove">;</span></a>
                             </td>
                         </tr>
 
                         <?php
-                        $countInv++;
+                        //$countInv++;
                                 }
                             }
                     catch(PDOException $e) {
