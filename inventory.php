@@ -4,7 +4,7 @@ try {
   $stmt = $conn->prepare("SELECT * FROM `sci_inventory` LIMIT 0, 50");
   $stmt->execute();
   $inventory = $stmt->fetchAll();
-
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -194,14 +194,14 @@ try {
                             <td><?php echo $inventory["Job_Detail"];?><input name="jobdetail" type="hidden" class="form-control"
                                     value="<?php echo $inventory['Job_Detail'];?>"></td>
                             <td align="center"><a href="editinventory.php?itemid=<?php echo $inventory['Item_id']; ?>"
-                            <span class="glyphicon glyphicon-pencil">;</span></a>
-                            <a href="deleteinventory.php?itemid=<?php echo $inventory['Item_id']; ?>">
-                            <span class="glyphicon glyphicon-remove">;</span></a>
+                            <span class="glyphicon glyphicon-pencil"></span></a>
+                            <a href="deleteinventory_db.php?itemid=<?php echo $inventory['Item_id']; ?>"onclick = "return confirm('ยืนยันการลบ')">
+                            <span class="glyphicon glyphicon-remove"></span></a>
                             </td>
                         </tr>
 
                         <?php
-                        //$countInv++;
+                        $countInv++;
                                 }
                             }
                     catch(PDOException $e) {

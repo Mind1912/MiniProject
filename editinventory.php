@@ -22,6 +22,15 @@ if (!isset($_GET['jobdetail'])) $_GET['jobdetail'] = "";
         $depname = $_GET['depname'];
         $place = $_GET['place'];
         $jobdetail = $_GET['jobdetail'];
+        try {
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $stmt = $conn->prepare("SELECT * FROM `sci_inventory`");
+            $stmt->execute();
+            $inventory = $stmt->fetch();
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+          }
+          ?>
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -131,47 +140,47 @@ if (!isset($_GET['jobdetail'])) $_GET['jobdetail'] = "";
                     </div>
                     <div class="col-md-6 form-group mt-2">
                         <label class="form-control-label">รหัสครุภัณฑ์ 3 มิติ</label><input type="text"
-                            class="form-control" name="initemid" placeholder="รหัสครุภัณฑ์ 3 มิติ" value="<?php echo $initemid;?>" required>
+                            class="form-control" name="initemid" placeholder="รหัสครุภัณฑ์ 3 มิติ" value="<?php echo $inventory['Initem_id'];?>" required>
                     </div>
                     <div class="mt-3">
                         <label class="form-control-label">ชื่อครุภัณฑ์</label><input type="text" class="form-control"
-                            name="subtype" placeholder="ชื่อครุภัณฑ์" value="<?php echo $subtype;?>" required>
+                            name="subtype" placeholder="ชื่อครุภัณฑ์" value="<?php echo $inventory['Subtype'];?>" required>
                     </div>
                     <div class="mt-3">
                         <label class="form-control-label">S/N</label><input type="text" class="form-control"
-                            name="serialno" placeholder="S/N" value="<?php echo $serialno;?>" required>
+                            name="serialno" placeholder="S/N" value="<?php echo $inventory['Serial_no'];?>" required>
                     </div>
                     <div class="col-md-4 form-group mt-3">
                         <label class="form-control-label">ได้มาเมื่อ</label><input type="text" name="ryear"
-                            class="form-control" placeholder="ได้มาเมื่อ" value="<?php echo $ryear;?>" required>
+                            class="form-control" placeholder="ได้มาเมื่อ" value="<?php echo $inventory['R_year'];?>" required>
                     </div>
                     <div class="col-md-8 form-group mt-3">
                         <label class="form-control-label">ประเภทงบประมาณ</label><input type="text" class="form-control"
-                            name="budgettype" placeholder="ประเภทงบประมาณ" value="<?php echo $budgettype;?>" required>
+                            name="budgettype" placeholder="ประเภทงบประมาณ" value="<?php echo $inventory['Budget_type'];?>" required>
                     </div>
                     <div class="col-md-6 form-group mt-3">
                         <label class="form-control-label">ราคาต่อหน่วย</label><input type="text" name="cost"
-                            class="form-control" placeholder="ราคาต่อหน่วย" value="<?php echo $cost;?>" required>
+                            class="form-control" placeholder="ราคาต่อหน่วย" value="<?php echo $inventory['Cost'];?>" required>
                     </div>
                     <div class="col-md-6 form-group mt-3">
                         <label class="form-control-label">เลขที่ใบเบิก</label><input type="text" class="form-control"
-                            name="buyid" placeholder="เลขที่ใบเบิก" value="<?php echo $buyid;?>" required>
+                            name="buyid" placeholder="เลขที่ใบเบิก" value="<?php echo $inventory['Buy_id'];?>" required>
                     </div>
                     <div class="col-md-6 form-group mt-3">
                         <label class="form-control-label">วิธีการได้มา</label><input type="text" name="method"
-                            class="form-control" placeholder="วิธีการได้มา" value="<?php echo $method;?>" required>
+                            class="form-control" placeholder="วิธีการได้มา" value="<?php echo $inventory['Method'];?>" required>
                     </div>
                     <div class="col-md-6 form-group mt-3">
                         <label class="form-control-label">ผู้ใช้งาน</label><input type="text" class="form-control"
-                            name="depname" placeholder="ผู้ใช้งาน" value="<?php echo $depname;?>" required>
+                            name="depname" placeholder="ผู้ใช้งาน" value="<?php echo $inventory['Dep_name'];?>" required>
                     </div>
                     <div class="col-md-6 form-group mt-3">
                         <label class="form-control-label">ใช้อยู่ที่</label><input type="text" name="place"
-                            class="form-control" placeholder="ใช้อยู่ที่" value="<?php echo $place;?>" required>
+                            class="form-control" placeholder="ใช้อยู่ที่" value="<?php echo $inventory['Place'];?>" required>
                     </div>
                     <div class="col-md-6 form-group mt-3">
                         <label class="form-control-label">ทะเบียนครุภัณฑ์</label><input type="text" class="form-control"
-                            name="jobdetail" placeholder="ทะเบียนครุภัณฑ์" value="<?php echo $jobdetail;?>" required>
+                            name="jobdetail" placeholder="ทะเบียนครุภัณฑ์" value="<?php echo $inventory['Job_Detail'];?>" required>
                     </div>
                     <div class="mt-2 text-center">
                         <button type="submit" class="btn btn-primary">บันทึกข้อมูล</button>

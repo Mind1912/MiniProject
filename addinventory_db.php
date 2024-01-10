@@ -16,8 +16,8 @@
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = "INSERT INTO `sci_inventory`(`Item_id`, `Initem_id`,`Subtype`,`Serial_no`,`R_year`,`Budget_type`,`Cost`,`Buy_id`,`Method`,
-            `Dep_name`,`Place`,`Job_Detail`) VALUES ('[$itemid]','[$initemid]','[$subtype]','[$serialno]',
-            '[$ryear]','[$budgettype]','[$cost]','[$buyid]','[$method]','[$depname]','[$place]','[$jobdetail]')";
+            `Dep_name`,`Place`,`Job_Detail`) VALUES ('$itemid','$initemid','$subtype','$serialno',
+            '$ryear','$budgettype','$cost','$buyid','$method','$depname','$place','$jobdetail')";
             // use exec() because no results are returned
             $conn->exec($sql);
             //echo "New record created successfully";
