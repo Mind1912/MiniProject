@@ -6,7 +6,7 @@ try {
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   // sql to delete a record
-  $sql = "DELETE FROM `sci_inventory` WHERE Item_id=$itemid";
+  $sql = "DELETE FROM `sci_inventory` WHERE Item_id = $itemid";
 
   // use exec() because no results are returned
   $conn->exec($sql);

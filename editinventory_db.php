@@ -25,7 +25,7 @@
             // execute the query
             $stmt->execute();
             //echo "New record created successfully";
-            //header('Location:inventory.php');
+            header('Location:inventory.php');
           } catch(PDOException $e) {
             //echo $sql . "<br>" . $e->getMessage();
           }
