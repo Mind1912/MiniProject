@@ -1,5 +1,5 @@
 <?php include ('connect_db.php');
-if (!isset($_POST['itemid'])) $_POST['itemid'] = "";
+/*if (!isset($_POST['itemid'])) $_POST['itemid'] = "";
 if (!isset($_POST['initemid'])) $_POST['initemid'] = "";
 if (!isset($_POST['subtype'])) $_POST['subtype'] = "";
 if (!isset($_POST['ryear'])) $_POST['ryear'] = "";
@@ -21,7 +21,7 @@ if (!isset($_POST['jobdetail'])) $_POST['jobdetail'] = "";
         $method = $_POST['method'];
         $depname = $_POST['depname'];
         $place = $_POST['place'];
-        $jobdetail = $_POST['jobdetail'];
+        $jobdetail = $_POST['jobdetail'];*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,8 +35,8 @@ if (!isset($_POST['jobdetail'])) $_POST['jobdetail'] = "";
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="assets/img/logo-sci-01.png" rel="icon">
+    <link href="assets/img/logo-sci-01.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -70,38 +70,15 @@ if (!isset($_POST['jobdetail'])) $_POST['jobdetail'] = "";
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo me-auto"><a href="index.html">inventory</a></h1>
+            <h1 class="logo me-auto"><a href="index.php">inventory</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="trainers.html">Trainers</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-
-                    <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Drop Down 2</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="active" href="contact.html">Contact</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="inventory.php">Inventory</a></li>
+                    <li><a class="active" href="addinventory.php">Addinventory</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -179,6 +156,7 @@ if (!isset($_POST['jobdetail'])) $_POST['jobdetail'] = "";
             </form>
 
         </div>
+        </div>
 
 
 
@@ -190,13 +168,18 @@ if (!isset($_POST['jobdetail'])) $_POST['jobdetail'] = "";
                     <div class="row">
 
                         <div class="col-lg-3 col-md-6 footer-contact">
-                            <h3>Mentor</h3>
-                            <p>
-                                A108 Adam Street <br>
-                                New York, NY 535022<br>
-                                United States <br><br>
-                                <strong>Phone:</strong> +1 5589 55488 55<br>
-                                <strong>Email:</strong> info@example.com<br>
+                            <h5>เกี่ยวกับคณะวิทยาศาสตร์</h5>
+                            <p>คณะวิทยาศาสตร์ มหาวิทยาลัยนเรศวร <br>
+                                ประกอบด้วย สำนักงานเลขานุการ และ <br>
+                                5 ภาควิชาได้แก่ ภาควิชาคณิตศาสตร์ <br>
+                                ภาควิชาเคมี ภาควิชาชีววิทยา ภาควิชาฟิสิกส์ <br>
+                                และภาควิชาวิทยาการคอมพิวเตอร์และ<br>
+                                เทคโนโลยีสารสนเทศ<br>
+                                <strong>ที่อยู่:</strong> 99 หมู่ 9 ตำบล ท่าโพธิ์ อำเภอเมือง จังหวัด <br>
+                                พิษณุโลก 65000<br>
+                                <strong>โทรศัพท์:</strong> 055-963112<br>
+                                <strong>โทรสาร:</strong> 055-963113<br>
+                                <strong>E-mail:</strong> saraban_sci@nu.ac.th<br>
                             </p>
                         </div>
 

@@ -10,9 +10,10 @@ try {
 
   // use exec() because no results are returned
   $conn->exec($sql);
-  echo "Record deleted successfully";
+  //echo "Record deleted successfully";
+  header('Location:inventory.php');
 } catch(PDOException $e) {
-  echo $e->getMessage();
+  //echo $e->getMessage();
 }
 
 $conn = null;

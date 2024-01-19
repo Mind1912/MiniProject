@@ -1,28 +1,28 @@
 <?php include ('connect_db.php');
-if (!isset($_GET['itemid'])) $_GET['itemid'] = "";
-if (!isset($_GET['initemid'])) $_GET['initemid'] = "";
-if (!isset($_GET['subtype'])) $_GET['subtype'] = "";
-if (!isset($_GET['ryear'])) $_GET['ryear'] = "";
-if (!isset($_GET['budgettype'])) $_GET['budgettype'] = "";
-if (!isset($_GET['cost'])) $_GET['cost'] = "";
-if (!isset($_GET['buyid'])) $_GET['buyid'] = "";
-if (!isset($_GET['method'])) $_GET['method'] = "";
-if (!isset($_GET['depname'])) $_GET['depname'] = "";
-if (!isset($_GET['place'])) $_GET['place'] = "";
-if (!isset($_GET['jobdetail'])) $_GET['jobdetail'] = "";
-if (!isset($_GET['serialno'])) $_GET['serialno'] = "";
-        $itemid = $_GET['itemid'];
-        $initemid = $_GET['initemid'];
-        $subtype = $_GET['subtype'];
-        $serialno = $_GET['serialno'];
-        $ryear = $_GET['ryear'];
-        $budgettype = $_GET['budgettype'];
-        $cost = $_GET['cost'];
-        $buyid = $_GET['buyid'];
-        $method = $_GET['method'];
-        $depname = $_GET['depname'];
-        $place = $_GET['place'];
-        $jobdetail = $_GET['jobdetail'];
+if (!isset($_REQUEST['itemid'])) $_REQUEST['itemid'] = "";
+if (!isset($_REQUEST['initemid'])) $_REQUEST['initemid'] = "";
+if (!isset($_REQUEST['subtype'])) $_REQUEST['subtype'] = "";
+if (!isset($_REQUEST['ryear'])) $_REQUEST['ryear'] = "";
+if (!isset($_REQUEST['budgettype'])) $_REQUEST['budgettype'] = "";
+if (!isset($_REQUEST['cost'])) $_REQUEST['cost'] = "";
+if (!isset($_REQUEST['buyid'])) $_REQUEST['buyid'] = "";
+if (!isset($_REQUEST['method'])) $_REQUEST['method'] = "";
+if (!isset($_REQUEST['depname'])) $_REQUEST['depname'] = "";
+if (!isset($_REQUEST['place'])) $_REQUEST['place'] = "";
+if (!isset($_REQUEST['jobdetail'])) $_REQUEST['jobdetail'] = "";
+if (!isset($_REQUEST['serialno'])) $_REQUEST['serialno'] = "";
+        $itemid = $_REQUEST['itemid'];
+        $initemid = $_REQUEST['initemid'];
+        $subtype = $_REQUEST['subtype'];
+        $serialno = $_REQUEST['serialno'];
+        $ryear = $_REQUEST['ryear'];
+        $budgettype = $_REQUEST['budgettype'];
+        $cost = $_REQUEST['cost'];
+        $buyid = $_REQUEST['buyid'];
+        $method = $_REQUEST['method'];
+        $depname = $_REQUEST['depname'];
+        $place = $_REQUEST['place'];
+        $jobdetail = $_REQUEST['jobdetail'];
         try {
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $stmt = $conn->prepare("SELECT * FROM `sci_inventory`");
@@ -45,8 +45,8 @@ if (!isset($_GET['serialno'])) $_GET['serialno'] = "";
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="assets/img/logo-sci-01.png" rel="icon">
+    <link href="assets/img/logo-sci-01.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -86,32 +86,9 @@ if (!isset($_GET['serialno'])) $_GET['serialno'] = "";
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="trainers.html">Trainers</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-
-                    <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                        <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Drop Down 2</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="active" href="contact.html">Contact</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="inventory.php">Inventory</a></li>
+                    <li><a href="addinventory.php">Addinventory</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -205,16 +182,21 @@ if (!isset($_GET['serialno'])) $_GET['serialno'] = "";
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3>Mentor</h3>
-                        <p>
-                            A108 Adam Street <br>
-                            New York, NY 535022<br>
-                            United States <br><br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
-                        </p>
-                    </div>
+                <div class="col-lg-3 col-md-6 footer-contact">
+                            <h5>เกี่ยวกับคณะวิทยาศาสตร์</h5>
+                            <p>คณะวิทยาศาสตร์ มหาวิทยาลัยนเรศวร <br>
+                            ประกอบด้วย สำนักงานเลขานุการ และ <br>
+                            5 ภาควิชาได้แก่ ภาควิชาคณิตศาสตร์ <br>
+                            ภาควิชาเคมี ภาควิชาชีววิทยา ภาควิชาฟิสิกส์ <br>
+                            และภาควิชาวิทยาการคอมพิวเตอร์และ<br>
+                            เทคโนโลยีสารสนเทศ<br>
+                                <strong>ที่อยู่:</strong> 99 หมู่ 9 ตำบล ท่าโพธิ์ อำเภอเมือง จังหวัด <br>
+                                พิษณุโลก 65000<br>
+                                <strong>โทรศัพท์:</strong> 055-963112<br>
+                                <strong>โทรสาร:</strong> 055-963113<br>
+                                <strong>E-mail:</strong> saraban_sci@nu.ac.th<br>
+                            </p>
+                        </div>
 
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Useful Links</h4>
