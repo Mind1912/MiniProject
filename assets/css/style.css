@@ -136,7 +136,7 @@ h6 {
 }
 
 #header .logo a {
-  color: #ffea00;
+  color: #5fcf80;
 }
 
 #header .logo img {
@@ -148,7 +148,7 @@ h6 {
 */
 .get-started-btn {
   margin-left: 22px;
-  background: #ffea00;
+  background: #5fcf80;
   color: #fff;
   border-radius: 50px;
   padding: 8px 25px;
@@ -159,7 +159,7 @@ h6 {
 }
 
 .get-started-btn:hover {
-  background: #ffea00;
+  background: #5fcf80;
   color: #fff;
 }
 
