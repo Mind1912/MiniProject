@@ -101,7 +101,7 @@ try {
                             <button type="button" class="btn btn-primary">เพิ่มครุภัณฑ์</button></a>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row ">
                     <div class="col-md-6 form-group mt-2">
                         <label class="form-control-label">รหัสครุภัณฑ์</label><input type="text" name="itemid"
                             class="form-control" placeholder="รหัสครุภัณฑ์" value="" required>
